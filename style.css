@@ -2728,6 +2728,10 @@ main > section:not(.home-hero) {
        background: transparent;
 }
 
+.eyebrow h2{
+font-style: normal;
+}
+
 .button {
     border-radius: 4px;
     min-height: 48px;
@@ -4481,4 +4485,82 @@ body[data-theme="light"] .mandate,
 body[data-theme="dark"] .mandate {
     background: transparent !important;
     background-color: transparent !important;
+}
+
+/* OUR CHURCH FAMILY — NORMAL HEADING FONT */
+.extra-section .section-heading h2,
+.extra-section .section-heading h2 em {
+    font-style: normal;
+}
+
+/* ABOUT OUR CHURCH — IMAGE ON THE RIGHT */
+.about-grid-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Text on the left */
+.about-grid-1 .about-copy {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Image on the right */
+.about-grid-1 .image-stack {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .about-grid-1 {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-grid-1 .about-copy,
+    .about-grid-1 .image-stack {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+/* HOME VISIT SECTION */
+.home-visit {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Background image */
+.home-visit-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.home-visit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.70);
+}
+
+/* STRONG DARK NAVY OVERLAY */
+.home-visit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 26, 58, 0.80);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Keep content visible */
+.home-visit-inner {
+    position: relative;
+    z-index: 1;
 }
