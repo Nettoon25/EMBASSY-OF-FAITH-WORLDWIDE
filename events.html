@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#061A3A">
+    <meta name="description" content="Embassy of Faith Worldwide — imparting believers to impact the world. Join us for worship, grow in faith, and connect with our church family in Nairobi, Kenya.">
+
+    <title>Events | Embassy of Faith Worldwide</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-wrap">
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="Embassy of Faith Worldwide home"
+            >
+                <img
+                    class="brand-logo-img"
+                    src="church-logo-placeholder.svg"
+                    alt="Embassy of Faith Worldwide logo placeholder — replace with official logo"
+                >
+            </a>
+
+            <button
+                class="menu-toggle"
+                aria-expanded="false"
+                aria-controls="site-nav"
+                aria-label="Open navigation"
+                type="button"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="site-nav" aria-label="Main navigation">
+                <a href="church.html">Our Church</a>
+                <a href="mandate.html">Our Mandate</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="messages.html">Messages</a>
+                <a href="events.html" aria-current="page">Events</a>
+
+                <a class="nav-button" href="visit.html">
+                    Plan a Visit
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+                <button
+                    class="theme-toggle"
+                    type="button"
+                    aria-label="Switch to dark mode"
+                    title="Toggle light/dark theme"
+                >
+                    <span class="theme-icon" aria-hidden="true">◐</span>
+                    <span class="theme-label">Dark mode</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <div class="container">
+                <p class="eyebrow">
+                    <span></span>
+                    GATHER WITH US
+                </p>
+
+                <h1>
+                    Life happens
+                    <em>in community.</em>
+                </h1>
+
+                <p>
+                    Find confirmed worship services, prayer meetings and church programmes here.
+                </p>
+            </div>
+        </section>
+
+        <section class="section events" id="events">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">
+                            <span></span>
+                            CHURCH CALENDAR
+                        </p>
+
+                        <h2>
+                            Plan for
+                            <em>what's ahead.</em>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Browse the calendar by week, month or year. Replace the sample listings with confirmed church services, conferences, fellowships and outreach events.
+                    </p>
+                </div>
+
+                <div
+                    class="calendar-toolbar"
+                    role="group"
+                    aria-label="Choose calendar view"
+                >
+                    <button
+                        class="calendar-view is-active"
+                        data-view="week"
+                        aria-pressed="true"
+                    >
+                        Week
+                    </button>
+
+                    <button
+                        class="calendar-view"
+                        data-view="month"
+                        aria-pressed="false"
+                    >
+                        Month
+                    </button>
+
+                    <button
+                        class="calendar-view"
+                        data-view="year"
+                        aria-pressed="false"
+                    >
+                        Year
+                    </button>
+
+                    <span class="calendar-note">
+                        Sample planning view · confirm dates before publishing
+                    </span>
+                </div>
+
+                <div class="calendar-panel" id="calendar-week">
+                    <div class="calendar-heading">
+                        <span>THIS WEEK</span>
+                        <h3>A week for worship and connection</h3>
+                    </div>
+
+                    <div class="calendar-events">
+                        <article class="calendar-event">
+                            <div class="calendar-date">
+                                <strong>Sun</strong>
+                                <span>DATE TBC</span>
+                            </div>
+
+                            <div>
+                                <small>WORSHIP</small>
+                                <h4>Sunday Worship Service</h4>
+                                <p>
+                                    Gather for worship, prayer, teaching and fellowship. Add the confirmed time and venue.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="calendar-event">
+                            <div class="calendar-date">
+                                <strong>Mid</strong>
+                                <span>DATE TBC</span>
+                            </div>
+
+                            <div>
+                                <small>PRAYER &amp; WORD</small>
+                                <h4>Midweek Prayer and Teaching</h4>
+                                <p>
+                                    A time to pray together and grow in understanding of Scripture. Confirm the day and time.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="calendar-event">
+                            <div class="calendar-date">
+                                <strong>Sat</strong>
+                                <span>DATE TBC</span>
+                            </div>
+
+                            <div>
+                                <small>COMMUNITY</small>
+                                <h4>Fellowship or Outreach</h4>
+                                <p>
+                                    Add the next confirmed fellowship, community outreach or ministry gathering.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="calendar-panel" id="calendar-month" hidden>
+                    <div class="calendar-heading">
+                        <span>MONTHLY PLANNING</span>
+                        <h3>Upcoming this month</h3>
+                        <p>
+                            Use this view to announce monthly prayer meetings, ministry fellowships, special services and registration deadlines.
+                        </p>
+                    </div>
+
+                    <div class="calendar-month-grid">
+                        <article>
+                            <strong>WEEK 1</strong>
+                            <h4>Worship &amp; Prayer</h4>
+                            <p>Add confirmed dates and times.</p>
+                        </article>
+
+                        <article>
+                            <strong>WEEK 2</strong>
+                            <h4>Ministry Fellowship</h4>
+                            <p>Add ministry meeting details.</p>
+                        </article>
+
+                        <article>
+                            <strong>WEEK 3</strong>
+                            <h4>Teaching &amp; Discipleship</h4>
+                            <p>Add the confirmed programme.</p>
+                        </article>
+
+                        <article>
+                            <strong>WEEK 4</strong>
+                            <h4>Community Outreach</h4>
+                            <p>Add venue and participation details.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="calendar-panel" id="calendar-year" hidden>
+                    <div class="calendar-heading">
+                        <span>YEARLY OVERVIEW</span>
+                        <h3>Plan the bigger moments</h3>
+                        <p>
+                            Use this overview for annual conferences, anniversary celebrations, retreats, outreach campaigns and seasonal services. Publish exact dates only when confirmed.
+                        </p>
+                    </div>
+
+                    <div class="calendar-month-grid year-grid">
+                        <article>
+                            <strong>JAN – MAR</strong>
+                            <h4>Prayer &amp; Vision</h4>
+                            <p>Quarterly focus and ministry planning.</p>
+                        </article>
+
+                        <article>
+                            <strong>APR – JUN</strong>
+                            <h4>Growth &amp; Fellowship</h4>
+                            <p>Discipleship gatherings and community activities.</p>
+                        </article>
+
+                        <article>
+                            <strong>JUL – SEP</strong>
+                            <h4>Outreach &amp; Service</h4>
+                            <p>Community engagement and ministry events.</p>
+                        </article>
+
+                        <article>
+                            <strong>OCT – DEC</strong>
+                            <h4>Celebration &amp; Thanksgiving</h4>
+                            <p>Year-end gatherings and thanksgiving services.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="fine-print">
+                    The items above are editable planning examples, not confirmed scheduled events. Add official dates, times, locations and registration links before publication.
+                </p>
+            </div>
+        </section>
+
+        <section class="extra-section">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">
+                            <span></span>
+                            STAY CONNECTED
+                        </p>
+
+                        <h2>
+                            There is a place
+                            <em>for you.</em>
+                        </h2>
+                    </div>
+
+                    <p>
+                        Check back for updates and contact the church team if you need directions, accessibility information or help confirming a gathering.
+                    </p>
+                </div>
+
+                <div class="extra-grid">
+                    <article>
+                        <img
+                            class="extra-card-image"
+                            src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=85"
+                            alt="Photo mockup for Worship together"
+                            loading="lazy"
+                        >
+
+                        <h3>Worship together</h3>
+                        <p>
+                            Come together in praise, prayer and the teaching of God's Word.
+                        </p>
+                    </article>
+
+                    <article>
+                        <img
+                            class="extra-card-image"
+                            src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=900&q=85"
+                            alt="Photo mockup for Grow in faith"
+                            loading="lazy"
+                        >
+
+                        <h3>Grow in faith</h3>
+                        <p>
+                            Make room for reflection, biblical learning and encouragement.
+                        </p>
+                    </article>
+
+                    <article>
+                        <img
+                            class="extra-card-image"
+                            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=85"
+                            alt="Photo mockup for Serve the community"
+                            loading="lazy"
+                        >
+
+                        <h3>Serve the community</h3>
+                        <p>
+                            Discover opportunities to care for others and take part in outreach.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <a class="brand footer-logo" href="index.html">
+                    <img
+                        class="brand-logo-img"
+                        src="church-logo-placeholder.svg"
+                        alt="Embassy of Faith Worldwide logo placeholder — replace with official logo"
+                    >
+                </a>
+
+                <p>
+                    Imparting believers to impact the world — through faith, purpose, and service.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Take a step</h3>
+                <a href="visit.html">Plan a Visit</a>
+                <a href="events.html">Events</a>
+                <a href="visit.html#prayer">Prayer Request</a>
+                <a href="visit.html#giving">Giving</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Connect</h3>
+                <a href="visit.html#contact">Contact Us</a>
+
+                <a
+                    href="https://www.facebook.com/search/top?q=embassy%20of%20faith%20worldwide-%20nairobi.%20kenya."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook ↗
+                </a>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Embassy+of+Faith+Worldwide+Fedha+Nairobi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Find us on Maps ↗
+                </a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>
+                © <span id="year"></span> Embassy of Faith Worldwide. All rights reserved.
+            </p>
+
+            <div>
+                <a href="visit.html#contact">Privacy &amp; safeguarding</a>
+                <a href="index.html">Back to top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-top" type="button" aria-label="Back to top">
+        ↑
+    </button>
+</body>
+</html>
