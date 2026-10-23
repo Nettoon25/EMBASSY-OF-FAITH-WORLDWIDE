@@ -123,3 +123,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const calendarButtons = document.querySelectorAll(".calendar-view");
+
+    const calendarPanels = document.querySelectorAll(
+        "[data-calendar-panel]"
+    );
+
+    calendarButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedView = button.dataset.view;
+
+            // Update the selected button.
+            calendarButtons.forEach((item) => {
+                const isActive = item === button;
+
+                item.classList.toggle("is-active", isActive);
+                item.setAttribute("aria-pressed", String(isActive));
+            });
+
+            // Display only the selected calendar panel.
+            calendarPanels.forEach((panel) => {
+                panel.hidden = panel.dataset.calendarPanel !== selectedView;
+            });
+        });
+    });
+});
+

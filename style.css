@@ -4656,3 +4656,256 @@ body[data-theme="dark"] .mandate {
         columns: 1;
     }
 }
+
+
+/* =========================================================
+   CALENDAR — CONSISTENT CARD SIZING ACROSS WEEK, MONTH & YEAR
+   Add this block at the very bottom of style.css
+========================================================= */
+
+/* Shared calendar panel dimensions */
+
+.calendar-panel {
+    width: 100%;
+    min-width: 0;
+    min-height: 500px;
+    padding: clamp(20px, 3vw, 32px);
+    border: 1px solid var(--line, #dce5f0);
+    border-radius: 12px;
+    background: var(--card, #fff);
+    box-sizing: border-box;
+}
+
+.calendar-panel[hidden] {
+    display: none !important;
+}
+
+/* Consistent heading area */
+
+.calendar-heading {
+    min-height: 105px;
+    margin-bottom: 24px;
+}
+
+.calendar-heading h3 {
+    margin: 8px 0;
+}
+
+.calendar-heading p {
+    max-width: 700px;
+    margin-bottom: 0;
+}
+
+/* Shared card grid */
+
+.calendar-events,
+.calendar-month-grid,
+.calendar-year-grid,
+.calendar-month-grid.year-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+/* Shared card dimensions */
+
+.calendar-event,
+.calendar-month-grid article,
+.calendar-year-grid article,
+.calendar-month-grid.year-grid article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    min-height: 390px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    border: 1px solid var(--line, #dce5f0);
+    border-radius: 12px;
+    background: var(--card, #fff);
+}
+
+/* Week card poster */
+
+.calendar-poster {
+    width: 100%;
+    height: 210px;
+    min-height: 210px;
+    overflow: hidden;
+    background: #e9edf4;
+    border-radius: 0;
+}
+
+.calendar-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Month card poster */
+
+.calendar-month-grid article > img,
+.calendar-month-grid article .calendar-month-poster {
+    display: block;
+    width: 100%;
+    height: 210px;
+    min-height: 210px;
+    object-fit: cover;
+    overflow: hidden;
+    background: #e9edf4;
+}
+
+.calendar-month-grid article .calendar-month-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Year card poster */
+
+.calendar-year-grid article .calendar-year-poster,
+.calendar-month-grid.year-grid article .calendar-year-poster {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    min-height: 210px;
+    overflow: hidden;
+    background: #e9edf4;
+}
+
+.calendar-year-grid article .calendar-year-poster img,
+.calendar-month-grid.year-grid article .calendar-year-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Shared content spacing */
+
+.calendar-event-content,
+.calendar-month-content,
+.calendar-year-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 20px;
+}
+
+.calendar-date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 14px 20px 0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    background: var(--pale, #edf3fb);
+}
+
+.calendar-event-content h4,
+.calendar-month-grid h4,
+.calendar-year-grid h4 {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.calendar-event-content p,
+.calendar-month-grid article p,
+.calendar-year-grid article p {
+    margin-top: 0;
+    line-height: 1.7;
+}
+
+/* Keep footer information at the bottom of cards */
+
+.calendar-card-footer,
+.calendar-year-status {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+/* Tablet: two equal columns */
+
+@media (max-width: 900px) {
+    .calendar-events,
+    .calendar-month-grid,
+    .calendar-year-grid,
+    .calendar-month-grid.year-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .calendar-panel {
+        min-height: 0;
+    }
+}
+
+/* Mobile: one full-width card per row */
+
+@media (max-width: 600px) {
+    .calendar-events,
+    .calendar-month-grid,
+    .calendar-year-grid,
+    .calendar-month-grid.year-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .calendar-panel {
+        padding: 16px;
+    }
+
+    .calendar-heading {
+        min-height: 0;
+    }
+
+    .calendar-event,
+    .calendar-month-grid article,
+    .calendar-year-grid article,
+    .calendar-month-grid.year-grid article {
+        min-height: 0;
+    }
+
+    .calendar-poster,
+    .calendar-month-grid article > img,
+    .calendar-month-grid article .calendar-month-poster,
+    .calendar-year-grid article .calendar-year-poster,
+    .calendar-month-grid.year-grid article .calendar-year-poster {
+        height: 230px;
+        min-height: 230px;
+    }
+}
+
+/* Preserve the existing dark theme */
+
+html[data-theme="dark"] .calendar-panel,
+html[data-theme="dark"] .calendar-event,
+html[data-theme="dark"] .calendar-month-grid article,
+html[data-theme="dark"] .calendar-year-grid article,
+html[data-theme="dark"] .calendar-month-grid.year-grid article {
+    background: #000;
+    color: var(--ink, #edf3fc);
+    border-color: var(--line, #2a3b54);
+}
+
+html[data-theme="dark"] .calendar-event-content h4,
+html[data-theme="dark"] .calendar-month-grid h4,
+html[data-theme="dark"] .calendar-year-grid h4 {
+    color: #edf3fc;
+}
+
+html[data-theme="dark"] .calendar-date {
+    background: #101010;
+    border: 1px solid #2a3b54;
+}
+
+html[data-theme="dark"] .calendar-date strong {
+    color: #edf3fc;
+}
