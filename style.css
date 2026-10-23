@@ -4909,3 +4909,182 @@ html[data-theme="dark"] .calendar-date {
 html[data-theme="dark"] .calendar-date strong {
     color: #edf3fc;
 }
+
+
+/* =========================================
+   EXTRA GRID — TRANSPARENT CARDS
+========================================= */
+
+.extra-grid article {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none;
+    border: none;
+}
+
+/* Keep images properly displayed */
+.extra-grid .extra-card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Preserve readable text */
+.extra-grid article h3,
+.extra-grid article p {
+    background: transparent;
+}
+
+/* Dark mode */
+.dark-mode .extra-grid article,
+.dark-theme .extra-grid article,
+[data-theme="dark"] .extra-grid article {
+    background:#121212 !important;
+    background-color:#121212 !important;
+    box-shadow: none;
+    border-style: none;
+}
+
+/* Dark mode */
+.dark-mode .mandate-cards .image-mandate-cards article,
+.dark-theme .mandate-cards .image-mandate-cards article,
+[data-theme="dark"] .mandate-cards .image-mandate-cards article {
+    background:#121212 !important;
+    background-color:#121212 !important;
+    box-shadow: none;
+    border-style: none;
+}
+
+
+/* =========================================
+   OUR MANDATE — TRANSPARENT CARDS
+========================================= */
+
+.mandate-cards.image-mandate-cards > article {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Make the text area transparent */
+.mandate-cards.image-mandate-cards .mandate-card-copy {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Preserve image appearance */
+.mandate-cards.image-mandate-cards > article > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Dark mode */
+[data-theme="dark"] .mandate-cards.image-mandate-cards > article,
+[data-theme="dark"] .mandate-cards.image-mandate-cards .mandate-card-copy {
+    background: #121212 !important;
+    background-color: #121212 !important;
+    border: none !important;
+    box-shadow: none !important;
+    color:white;
+}
+
+/* =========================================
+   EXTRA GRID — TEXT COLORS
+========================================= */
+
+/* Transparent card backgrounds */
+.extra-grid > article {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* DARK MODE: Yellow headings, white descriptions */
+[data-theme="dark"] .extra-grid article h3,
+.dark-mode .extra-grid article h3,
+.dark-theme .extra-grid article h3 {
+    color: #FFD700 !important;
+}
+
+[data-theme="dark"] .extra-grid article p,
+.dark-mode .extra-grid article p,
+.dark-theme .extra-grid article p {
+    color: #FFFFFF !important;
+}
+
+/* LIGHT MODE: Yellow headings, black descriptions */
+[data-theme="light"] .extra-grid article h3 {
+    color: black !important;
+}
+
+[data-theme="light"] .extra-grid article p {
+    color: #000000 !important;
+}
+
+/* Default/light-mode fallback when no theme attribute exists */
+.extra-grid article h3 {
+    color: #FFD700;
+}
+
+.extra-grid article p {
+    color: #0066CC;
+}
+
+/* =========================================
+   OUR MANDATE — TEXT COLORS
+========================================= */
+
+/* DARK MODE */
+[data-theme="dark"] .mandate-cards.image-mandate-cards
+.mandate-card-copy h3 {
+    color: #FFD700 !important; /* Yellow */
+}
+
+[data-theme="dark"] .mandate-cards.image-mandate-cards
+.mandate-card-copy p {
+    color: #FFFFFF !important; /* White */
+}
+
+/* LIGHT MODE */
+[data-theme="light"] .mandate-cards.image-mandate-cards
+.mandate-card-copy h3 {
+    color: black!important; /* Yellow */
+}
+
+[data-theme="light"] .mandate-cards.image-mandate-cards
+.mandate-card-copy p {
+    color: #000000 !important; /* Black */
+}
+
+/* Default colors when no data-theme attribute is set */
+.mandate-cards.image-mandate-cards
+.mandate-card-copy h3 {
+    color: #FFD700;
+}
+
+.mandate-cards.image-mandate-cards
+.mandate-card-copy p {
+    color: #0066CC;
+}
+
+/* =========================================
+   PAGE INTRO — LIGHT MODE ONLY
+========================================= */
+
+[data-theme="light"] .page-intro h1 {
+    color: #000000 !important;
+}
+
+[data-theme="light"] .page-intro h1 em {
+    color: #0066CC !important;
+}
+
+[data-theme="light"] .page-intro .container > p:not(.eyebrow) {
+    color: #000000 !important;
+}
