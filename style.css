@@ -227,8 +227,8 @@ button:focus-visible {
 
 
 :root {
-    --navy: #061a3a;
-    --navy2: #092653;
+    --navy: : blue;;
+    --navy2: blue;
     --blue: #0759a8;
     --blue2: #0b72cf;
     --gold: #f7b916;
@@ -788,7 +788,7 @@ button,a {
 .lead {
     font-size: 17px;
     line-height: 1.7;
-    color: #253b5b;
+    color: blue;
 }
 
 .about-copy>p:not(.eyebrow) {
@@ -1384,7 +1384,7 @@ button,a {
 }
 
 .footer {
-    background: #030e23;
+
     color: #d7e1ef;
 }
 
@@ -1433,8 +1433,8 @@ button,a {
     border-top: 1px solid rgba(255,255,255,.12);
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 10px;
+    padding: 10px 0;
     font-size: 10px;
     color: #8fa2bd;
 }
@@ -2062,7 +2062,7 @@ html[data-theme="dark"] .theme-toggle {
 .extra-section {
     padding: clamp(3.5rem,7vw,6rem) 0;
   background-color: transparent;
-    color: var(--text, #10213d);
+    color: var(--text, blue);
 }
 
 .extra-section .section-heading {
@@ -2082,6 +2082,7 @@ html[data-theme="dark"] .theme-toggle {
     border-radius: 18px;
     background: var(--card,#fff);
     color: var(--text,#10213d);
+    color: #0066CC;
     min-height: 190px;
 }
 
@@ -2136,7 +2137,7 @@ html[data-theme="dark"] .extra-section,body[data-theme="dark"] .extra-section {
 html[data-theme="dark"] .extra-grid article,body[data-theme="dark"] .extra-grid article {
    background: transparent;
     color: #f4f7fc;
-    border-color: #2b3c55;
+    border-color: #121212;
 }
 
 html[data-theme="dark"] .extra-grid p,body[data-theme="dark"] .extra-grid p {
@@ -2146,6 +2147,7 @@ html[data-theme="dark"] .extra-grid p,body[data-theme="dark"] .extra-grid p {
 html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section {
     background: #f5f7fb;
     color: #10213d;
+    color: #0066CC;
 }
 
 /* Events calendar, sermon video players and gallery */
@@ -2159,9 +2161,10 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
 }
 
 .calendar-view {
-    border: 1px solid var(--line,#d9e1ec);
+    border: 1px solid #121212;
     background: var(--card,#fff);
     color: var(--ink,#10213d);
+    color: #0066CC;
     padding: 10px 19px;
     border-radius: 5px;
     font-weight: 800;
@@ -2183,7 +2186,7 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
 }
 
 .calendar-panel {
-    border: 1px solid var(--line,#d9e1ec);
+    border: 1px solid #121212;
     border-radius: 12px;
     padding: clamp(20px,4vw,36px);
     background: var(--card,#fff);
@@ -3914,7 +3917,7 @@ h4,
 .image-mandate-cards article {
     padding: 0 !important;
     background: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid #121212;
     color: #10213b;
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.13);
 }
@@ -4403,8 +4406,8 @@ html[data-theme="dark"] .footer {
 /* Transparent navigation container in both themes */
 html[data-theme="light"] .header .nav,
 html[data-theme="dark"] .header .nav {
-    background: transparent !important;
-    background-color: transparent !important;
+    background: #061a3a !important;
+    background-color: #061a3a  !important;
     background-image: none !important;
     box-shadow: none !important;
 }
@@ -4980,7 +4983,8 @@ html[data-theme="dark"] .calendar-date strong {
 .mandate-cards.image-mandate-cards > article > img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 10rem;
+    max-height: 10rem;
     object-fit: cover;
 }
 
@@ -5087,4 +5091,342 @@ html[data-theme="dark"] .calendar-date strong {
 
 [data-theme="light"] .page-intro .container > p:not(.eyebrow) {
     color: #000000 !important;
+}
+
+
+
+/* =========================================
+   GALLERY LIGHTBOX MODAL
+========================================= */
+
+.gallery-lightbox[hidden] {
+    display: none !important;
+}
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 80px 40px;
+
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gallery images should look clickable */
+.gallery-grid .gallery-item img {
+    cursor: zoom-in;
+}
+
+/* Enlarged image container */
+.lightbox-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Enlarged image */
+.lightbox-content img {
+    display: block;
+
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 4px;
+
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Image caption */
+.lightbox-caption {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    margin: 14px 0 0;
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+
+    font-size: 38px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.lightbox-close:hover {
+    background: #0066CC;
+    transform: rotate(90deg);
+}
+
+/* Image counter */
+.lightbox-counter {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    padding: 8px 13px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Previous and next arrows */
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    transition: background 0.2s, transform 0.2s;
+}
+
+.lightbox-arrow:hover {
+    background: #0066CC;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* Keyboard focus accessibility */
+.lightbox-close:focus-visible,
+.lightbox-arrow:focus-visible {
+    outline: 2px solid #FFD700;
+    outline-offset: 4px;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .gallery-lightbox {
+        padding: 65px 12px 30px;
+    }
+
+    .lightbox-content img {
+        max-width: 100%;
+        max-height: calc(100vh - 135px);
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 12px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 32px;
+    }
+
+    .lightbox-counter {
+        top: 23px;
+        left: 12px;
+
+        font-size: 13px;
+    }
+
+    .lightbox-arrow {
+        width: 38px;
+        height: 52px;
+
+        font-size: 22px;
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    .lightbox-prev {
+        left: 8px;
+    }
+
+    .lightbox-next {
+        right: 8px;
+    }
+
+    .lightbox-caption {
+        font-size: 13px;
+        padding: 0 35px;
+    }
+}
+
+/* =========================================
+   GALLERY — SEE MORE PHOTOS
+   Desktop + Mobile
+========================================= */
+
+.gallery-section .gallery-page-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin: 30px 0 15px;
+    padding: 10px 0;
+
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+}
+
+.gallery-section .gallery-page-more .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: visible;
+    opacity: 1;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .gallery-section .gallery-page-more {
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .gallery-section .gallery-page-more .button {
+        min-height: 44px;
+        padding: 12px 22px;
+        max-width: 100%;
+    }
+}
+
+/* Light mode */
+.verse-reference {
+    color: #000000;
+}
+
+.verse-reference span {
+    color: #000000;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .verse-reference,
+html[data-theme="dark"] .verse-reference span {
+    color: #ffffff;
+}
+
+/* HOME VISIT SECTION — BOTH THEMES */
+.home-visit-inner h2,
+.home-visit-inner h2 em {
+    color: #ffffff !important;
+}
+
+.home-visit-inner p {
+    color: white !important;
+}
+/* Dark mode */
+html[data-theme="dark"] .verse-reference,
+html[data-theme="dark"] .verse-reference span {
+    color: #ffffff;
+}
+
+
+/* Home visit heading — both light and dark modes */
+.home-visit-inner h2 {
+    color: #ffffff !important;
+}
+
+.home-visit-inner h2 em {
+    color: #ffd700 !important;
+}
+
+
+/* Gallery button — both light and dark modes */
+.gallery-page-more .button-outline {
+    color: #ffd700 !important;
+    border-color: #ffd700 !important;
+}
+
+.gallery-page-more .button-outline:hover {
+    background-color: #ffd700 !important;
+    color: #061a3a !important;
+}
+
+/* Reduce space between the church family section and events */
+.extra-section {
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.section.events {
+    margin-top: 2rem !important;
+    padding-top: 1rem !important;
+}
+
+
+/* Remove top margin from the extra section */
+.extra-section {
+    margin-top: 0 !important;
+}
+
+/* Remove bottom margin from the events section */
+.section.events {
+    margin-bottom: 0 !important;
+}
+
+.extra-section {
+    padding-top: 2rem !important;
+}
+
+.section.events {
+    padding-bottom: 0 !important;
 }

@@ -157,6 +157,7 @@
 
                     </figure>
 
+            
 
                     <!-- SERVING TOGETHER -->
                     <figure class="gallery-item">
@@ -183,6 +184,18 @@
         
                     </figure>
 
+                                     <!-- SERVING TOGETHER -->
+                    <figure class="gallery-item">
+
+                        <img
+                            src="serious.jpg"
+                            alt="Volunteers serving a community"
+                            loading="lazy"
+                        >
+
+                  
+
+                    </figure>
                 
                 </div>
 
@@ -195,6 +208,74 @@
 
             </div>
         </section>
+
+
+<!-- =========================================
+     GALLERY LIGHTBOX MODAL
+========================================= -->
+
+<div
+    class="gallery-lightbox"
+    id="galleryLightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image gallery viewer"
+    aria-hidden="true"
+    hidden
+>
+    <!-- Close button -->
+    <button
+        type="button"
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close image viewer"
+    >
+        &times;
+    </button>
+
+    <!-- Image counter -->
+    <div
+        class="lightbox-counter"
+        id="lightboxCounter"
+        aria-live="polite"
+    >
+        1 / 25
+    </div>
+
+    <!-- Previous image -->
+    <button
+        type="button"
+        class="lightbox-arrow lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous image"
+    >
+        &#10094;
+    </button>
+
+    <!-- Enlarged image -->
+    <div class="lightbox-content">
+        <img
+            src=""
+            alt=""
+            id="lightboxImage"
+        >
+
+        <p
+            class="lightbox-caption"
+            id="lightboxCaption"
+        ></p>
+    </div>
+
+    <!-- Next image -->
+    <button
+        type="button"
+        class="lightbox-arrow lightbox-next"
+        id="lightboxNext"
+        aria-label="Next image"
+    >
+        &#10095;
+    </button>
+</div>
 
         <!-- VIDEO HIGHLIGHTS -->
         <section class="section gallery-video-section">

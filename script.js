@@ -153,3 +153,155 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+/* =========================================
+   GALLERY LIGHTBOX FUNCTIONALITY
+========================================= */
+
+(() => {
+    const gallery = document.querySelector(".gallery-grid");
+    const lightbox = document.getElementById("galleryLightbox");
+
+    if (!gallery || !lightbox) return;
+
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+
+    const closeButton = document.getElementById("lightboxClose");
+    const previousButton = document.getElementById("lightboxPrev");
+    const nextButton = document.getElementById("lightboxNext");
+
+    const getImages = () =>
+        Array.from(gallery.querySelectorAll(".gallery-item img"));
+
+    let currentIndex = 0;
+    let lastFocusedElement = null;
+
+    function showImage(index) {
+        const images = getImages();
+
+        if (!images.length) return;
+
+        // Wrap around at the beginning and end.
+        currentIndex = (index + images.length) % images.length;
+
+        const selectedImage = images[currentIndex];
+
+        lightboxImage.src = selectedImage.currentSrc || selectedImage.src;
+        lightboxImage.alt = selectedImage.alt || "Gallery image";
+
+        lightboxCounter.textContent =
+            `${currentIndex + 1} / ${images.length}`;
+
+        lightboxCaption.textContent =
+            selectedImage.dataset.caption ||
+            selectedImage.alt ||
+            "";
+
+        previousButton.disabled = images.length < 2;
+        nextButton.disabled = images.length < 2;
+    }
+
+    function openLightbox(index) {
+        lastFocusedElement = document.activeElement;
+
+        showImage(index);
+
+        lightbox.hidden = false;
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        closeButton.focus();
+    }
+
+    function closeLightbox() {
+        lightbox.hidden = true;
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+
+        lightboxImage.removeAttribute("src");
+
+        if (lastFocusedElement) {
+            lastFocusedElement.focus();
+        }
+    }
+
+    function showPrevious() {
+        showImage(currentIndex - 1);
+    }
+
+    function showNext() {
+        showImage(currentIndex + 1);
+    }
+
+    // Open when a gallery image is clicked.
+    gallery.addEventListener("click", (event) => {
+        const image = event.target.closest(".gallery-item img");
+
+        if (!image) return;
+
+        const images = getImages();
+        const index = images.indexOf(image);
+
+        if (index !== -1) {
+            openLightbox(index);
+        }
+    });
+
+    // Close button.
+    closeButton.addEventListener("click", closeLightbox);
+
+    // Navigation arrows.
+    previousButton.addEventListener("click", showPrevious);
+    nextButton.addEventListener("click", showNext);
+
+    // Close when clicking the dark background.
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Keyboard controls.
+    document.addEventListener("keydown", (event) => {
+        if (lightbox.hidden) return;
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        } else if (event.key === "ArrowLeft") {
+            showPrevious();
+        } else if (event.key === "ArrowRight") {
+            showNext();
+        }
+    });
+
+    // Touch swipe support for mobile phones.
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    lightboxImage.addEventListener("touchstart", (event) => {
+        if (!event.touches.length) return;
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    lightboxImage.addEventListener("touchend", (event) => {
+        if (!event.changedTouches.length) return;
+
+        const deltaX = event.changedTouches[0].clientX - touchStartX;
+        const deltaY = event.changedTouches[0].clientY - touchStartY;
+
+        // Only interpret a clear horizontal swipe as navigation.
+        if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX < 0) {
+                showNext();
+            } else {
+                showPrevious();
+            }
+        }
+    }, { passive: true });
+})();
