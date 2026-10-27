@@ -5430,3 +5430,181 @@ html[data-theme="dark"] .verse-reference span {
 .section.events {
     padding-bottom: 0 !important;
 }
+
+
+/* =========================================
+   YOUR FIRST VISIT — CHURCH IMAGE
+========================================= */
+/* =========================================
+   YOUR FIRST VISIT — CHURCH IMAGE
+========================================= */
+
+.visit-image {
+    position: relative;
+    left: 1rem; /* Push the image container 1rem to the right */
+    min-height: 620px;
+    overflow: hidden;
+    isolation: isolate;
+    background-color: #e8edf5;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(6, 26, 58, 0.02) 45%,
+            rgba(6, 26, 58, 0.25) 100%
+        ),
+        url("345.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Subtle gold accent along the image edge */
+.visit-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--gold);
+    pointer-events: none;
+}
+
+/* Keep the copy aligned and readable */
+.visit-copy {
+    padding: clamp(35px, 6vw, 85px);
+    align-self: center;
+    min-width: 0;
+}
+
+.visit-copy .lead {
+    color: #52627a;
+    line-height: 1.8;
+}
+
+.visit-points li {
+    align-items: flex-start;
+}
+
+.visit-points strong {
+    color: var(--navy);
+    font-size: 13px;
+}
+
+.visit-points small {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Dark theme */
+html[data-theme="dark"] .visit {
+    background: #000;
+}
+
+html[data-theme="dark"] .visit-copy .lead,
+html[data-theme="dark"] .visit-points small {
+    color: #c1cee0;
+}
+
+html[data-theme="dark"] .visit-points strong {
+    color: #f2f6fd;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+    .visit-image {
+        min-height: 340px;
+        background-position: center 45%;
+    }
+
+    .visit-image::after {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+    }
+
+    .visit-copy {
+        padding: 45px 24px;
+    }
+}
+
+/* =========================================
+   HOME VISIT — CONSISTENT SECTION HEIGHT
+========================================= */
+
+.home-visit {
+    position: relative;
+    min-height: 450px; /* Adjust to your preferred height */
+    overflow: hidden;
+}
+
+/* Keep the image container at a consistent height */
+.home-visit-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Make the image fill the entire container */
+.home-visit-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Keep the content layer above the image */
+.home-visit-inner {
+    position: relative;
+    z-index: 1;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+/* Extra section — consistent card image heights */
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+.extra-grid article {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.extra-grid .extra-card-image {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    .extra-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-grid .extra-card-image {
+        height: 210px;
+    }
+}
