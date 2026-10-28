@@ -228,8 +228,8 @@ button:focus-visible {
 
 :root {
     --navy: : blue;;
-    --navy2: blue;
-    --blue: #0759a8;
+      --blue2: #0b72cf;
+    --blue2: #0b72cf;
     --blue2: #0b72cf;
     --gold: #f7b916;
     --gold2: #ffd45c;
@@ -5983,4 +5983,96 @@ html[data-theme="dark"] .theme-toggle #theme-icon {
     background-color: #203b60 !important;
     color: #ffffff !important;
     border-color: #203b60 !important;
+}
+
+
+/* =========================================
+   CONTACT FORM — BACKGROUND AND APPEARANCE
+========================================= */
+
+/* Light mode */
+.contact-form {
+ border-color: #404040;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark mode */
+html[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .contact-form,
+html.dark-theme .contact-form,
+body.dark-theme .contact-form {
+    background-color: #000000 !important;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Form fields — light mode */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+   border-color: #404040;
+    color: #111827;
+    border: 1px solid #CBD5E1;
+    border-radius: 6px;
+}
+
+/* Form fields — dark mode */
+html[data-theme="dark"] .contact-form input,
+html[data-theme="dark"] .contact-form select,
+html[data-theme="dark"] .contact-form textarea,
+body[data-theme="dark"] .contact-form input,
+body[data-theme="dark"] .contact-form select,
+body[data-theme="dark"] .contact-form textarea,
+html.dark-theme .contact-form input,
+html.dark-theme .contact-form select,
+html.dark-theme .contact-form textarea,
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form select,
+body.dark-theme .contact-form textarea {
+    background-color: #171717;
+    color: #F8FAFC;
+    border-color: #404040;
+}
+
+/* Placeholder text */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #64748B;
+}
+
+html[data-theme="dark"] .contact-form input::placeholder,
+html[data-theme="dark"] .contact-form textarea::placeholder,
+html.dark-theme .contact-form input::placeholder,
+html.dark-theme .contact-form textarea::placeholder {
+    color: #A3A3A3;
+}
+
+
+/* Contact form — black background in light mode */
+html[data-theme="light"] .contact-form,
+body[data-theme="light"] .contact-form,
+html:not([data-theme="dark"]).light-theme .contact-form,
+html:not(.dark-theme):not([data-theme="dark"]) .contact-form {
+    background-color: #000000 !important;
+    border-color: #333333;
+}
+
+/* Keep the form black in dark mode too */
+html[data-theme="dark"] .contact-form,
+body[data-theme="dark"] .contact-form,
+html.dark-theme .contact-form,
+body.dark-theme .contact-form {
+    background-color: #000000 !important;
+}
+
+
+
+/* Contact information headings — light mode */
+html[data-theme="light"] .contact-line small,
+body[data-theme="light"] .contact-line small,
+html:not([data-theme="dark"]) .contact-line small {
+    color: blue !important;
 }
