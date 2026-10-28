@@ -5971,3 +5971,16 @@ html[data-theme="dark"] .theme-toggle #theme-icon {
     background-color: transparent !important;
 }
 
+/* MORE PHOTOS — Default background color */
+.gallery-page-more .button.button-outline {
+    background-color: #142844 !important;
+    color: #ffffff !important;
+    border-color: #142844 !important;
+}
+
+/* Hover state */
+.gallery-page-more .button.button-outline:hover {
+    background-color: #203b60 !important;
+    color: #ffffff !important;
+    border-color: #203b60 !important;
+}
