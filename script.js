@@ -1,4 +1,3 @@
-
 (() => {
     'use strict';
 
@@ -8,11 +7,17 @@
         /* =========================================
            SHARED ELEMENTS
         ========================================= */
-        const menuButton = document.querySelector('.menu-toggle');
-        const navigation = document.querySelector('#primary-nav');
+
+    const menuButton = document.querySelector('#menuToggle');
+const navigation = document.querySelector('#site-nav');
+
         const themeButton = document.querySelector('.theme-toggle');
-        const themeIcon = themeButton?.querySelector('.theme-toggle-icon');
-        const backToTop = document.querySelector('.back-top, #back-to-top');
+        const themeIcon = document.querySelector(
+            '#theme-icon, .theme-toggle-icon'
+        );
+        const backToTop = document.querySelector(
+            '.back-top, #back-to-top'
+        );
         const year = document.querySelector('#year');
 
         if (year) {
@@ -21,17 +26,23 @@
 
         /* =========================================
            THEME TOGGLE
-           Persists the selected theme across pages.
+           Saves the selected theme.
         ========================================= */
+
         const THEME_KEY = 'eofw-theme';
 
         function updateThemeIcon(theme) {
             if (!themeIcon) return;
 
-            // Replace these paths if your icon files use different names.
-            themeIcon.src = theme === 'dark'
-                ? '/images/sun.svg'
-                : '/images/moon.svg';
+            // Keep the existing theme.png unless separate icons
+            // are specified using data-light-src/data-dark-src.
+            const iconForCurrentTheme = theme === 'dark'
+                ? themeIcon.dataset.lightSrc
+                : themeIcon.dataset.darkSrc;
+
+            if (iconForCurrentTheme) {
+                themeIcon.src = iconForCurrentTheme;
+            }
         }
 
         function applyTheme(theme) {
@@ -43,14 +54,21 @@
             if (themeButton) {
                 themeButton.setAttribute(
                     'aria-label',
-                    isDark ? 'Switch to light mode' : 'Switch to dark mode'
+                    isDark
+                        ? 'Switch to light mode'
+                        : 'Switch to dark mode'
                 );
 
-                themeButton.setAttribute('aria-pressed', String(isDark));
+                themeButton.setAttribute(
+                    'aria-pressed',
+                    String(isDark)
+                );
 
                 themeButton.setAttribute(
                     'title',
-                    isDark ? 'Switch to light theme' : 'Switch to dark theme'
+                    isDark
+                        ? 'Switch to light theme'
+                        : 'Switch to dark theme'
                 );
             }
 
@@ -62,7 +80,7 @@
         try {
             savedTheme = localStorage.getItem(THEME_KEY) || 'light';
         } catch (error) {
-            // Continue using the default theme if storage is unavailable.
+            // Use the default theme if browser storage is unavailable.
         }
 
         applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
@@ -79,20 +97,38 @@
                 try {
                     localStorage.setItem(THEME_KEY, nextTheme);
                 } catch (error) {
-                    // The theme still changes for the current page.
+                    // The theme still changes on the current page.
                 }
             });
         }
-
         /* =========================================
-           MOBILE NAVIGATION
+           MOBILE NAVIGATION & IMAGE ICONS
         ========================================= */
-        function closeMenu() {
+
+        const menuOpenIcon = document.querySelector('.menu-icon-open');
+        const menuCloseIcon = document.querySelector('.menu-icon-close');
+
+        function setMenuState(isOpen) {
             if (!menuButton || !navigation) return;
 
-            menuButton.setAttribute('aria-expanded', 'false');
-            menuButton.setAttribute('aria-label', 'Open navigation');
-            navigation.classList.remove('is-open');
+            // Open or close the navigation links.
+            navigation.classList.toggle('is-open', isOpen);
+
+            // Keep accessibility attributes in sync.
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            menuButton.setAttribute(
+                'aria-label',
+                isOpen ? 'Close navigation' : 'Open navigation'
+            );
+
+            // Display exactly one icon at a time.
+            if (menuOpenIcon) {
+                menuOpenIcon.classList.toggle('is-active', !isOpen);
+            }
+
+            if (menuCloseIcon) {
+                menuCloseIcon.classList.toggle('is-active', isOpen);
+            }
         }
 
         if (menuButton && navigation) {
@@ -100,35 +136,38 @@
                 const isOpen =
                     menuButton.getAttribute('aria-expanded') === 'true';
 
-                menuButton.setAttribute('aria-expanded', String(!isOpen));
-                menuButton.setAttribute(
-                    'aria-label',
-                    isOpen ? 'Open navigation' : 'Close navigation'
-                );
-
-                navigation.classList.toggle('is-open', !isOpen);
+                setMenuState(!isOpen);
             });
 
+            // Close the menu after a navigation link is selected.
             navigation.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMenu);
+                link.addEventListener('click', () => {
+                    setMenuState(false);
+                });
             });
 
+            // Close the menu when Escape is pressed.
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') {
-                    closeMenu();
+                    setMenuState(false);
                 }
             });
 
+            // Reset the menu when returning to desktop layout.
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 980) {
-                    closeMenu();
+                    setMenuState(false);
                 }
             });
+
+            // Start with the menu closed and hamburger visible.
+            setMenuState(false);
         }
 
         /* =========================================
            BACK TO TOP
         ========================================= */
+
         function updateBackToTop() {
             if (!backToTop) return;
 
@@ -139,9 +178,11 @@
         }
 
         if (backToTop) {
-            window.addEventListener('scroll', updateBackToTop, {
-                passive: true
-            });
+            window.addEventListener(
+                'scroll',
+                updateBackToTop,
+                { passive: true }
+            );
 
             updateBackToTop();
 
@@ -156,7 +197,11 @@
         /* =========================================
            CALENDAR VIEW SELECTOR
         ========================================= */
-        const calendarButtons = document.querySelectorAll('.calendar-view');
+
+        const calendarButtons = document.querySelectorAll(
+            '.calendar-view'
+        );
+
         const calendarPanels = document.querySelectorAll(
             '.calendar-panel, [data-calendar-panel]'
         );
@@ -169,7 +214,11 @@
                     calendarButtons.forEach((item) => {
                         const isActive = item === button;
 
-                        item.classList.toggle('is-active', isActive);
+                        item.classList.toggle(
+                            'is-active',
+                            isActive
+                        );
+
                         item.setAttribute(
                             'aria-pressed',
                             String(isActive)
@@ -177,8 +226,9 @@
                     });
 
                     calendarPanels.forEach((panel) => {
-                        const panelView = panel.dataset.calendarPanel
-                            || panel.id.replace(/^calendar-/, '');
+                        const panelView =
+                            panel.dataset.calendarPanel ||
+                            panel.id.replace(/^calendar-/, '');
 
                         panel.hidden = panelView !== selectedView;
                     });
@@ -189,6 +239,7 @@
         /* =========================================
            CONTACT FORM
         ========================================= */
+
         const form = document.querySelector('#contact-form');
 
         if (form) {
@@ -197,18 +248,25 @@
 
                 const data = new FormData(form);
 
-                const name = String(data.get('name') || '').trim();
-                const email = String(data.get('email') || '').trim();
+                const name = String(
+                    data.get('name') || ''
+                ).trim();
+
+                const email = String(
+                    data.get('email') || ''
+                ).trim();
+
                 const topic = String(
                     data.get('topic') || 'General enquiry'
                 ).trim();
+
                 const message = String(
                     data.get('message') || ''
                 ).trim();
 
                 const status = document.querySelector('#form-status');
 
-                // Replace with the verified recipient email address.
+                // Replace with your verified recipient email address.
                 const recipient = '';
 
                 if (!name || !email || !message) {
@@ -216,6 +274,7 @@
                         status.textContent =
                             'Please complete the required fields.';
                     }
+
                     return;
                 }
 
@@ -224,6 +283,7 @@
                         status.textContent =
                             'The contact email has not been configured yet.';
                     }
+
                     return;
                 }
 
@@ -251,6 +311,7 @@
         /* =========================================
            GALLERY LIGHTBOX
         ========================================= */
+
         const gallery = document.querySelector('.gallery-grid');
         const lightbox = document.getElementById('galleryLightbox');
 
@@ -276,7 +337,9 @@
         }
 
         const getImages = () =>
-            Array.from(gallery.querySelectorAll('.gallery-item img'));
+            Array.from(
+                gallery.querySelectorAll('.gallery-item img')
+            );
 
         let currentIndex = 0;
         let lastFocusedElement = null;
@@ -376,7 +439,10 @@
             }
         });
 
-        /* Touch swipe support */
+        /* =========================================
+           GALLERY TOUCH SWIPE SUPPORT
+        ========================================= */
+
         let touchStartX = 0;
         let touchStartY = 0;
 
@@ -396,7 +462,7 @@
             const deltaY =
                 event.changedTouches[0].clientY - touchStartY;
 
-            // Ignore vertical gestures and small horizontal movements.
+            // Ignore vertical swipes and small movements.
             if (
                 Math.abs(deltaX) > 50 &&
                 Math.abs(deltaX) > Math.abs(deltaY)
