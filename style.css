@@ -2062,7 +2062,7 @@ html[data-theme="dark"] .theme-toggle {
 .extra-section {
     padding: clamp(3.5rem,7vw,6rem) 0;
   background-color: transparent;
-    color: var(--text, blue);
+    color: blue;
 }
 
 .extra-section .section-heading {
@@ -2082,7 +2082,7 @@ html[data-theme="dark"] .theme-toggle {
     border-radius: 18px;
     background: var(--card,#fff);
     color: var(--text,#10213d);
-    color: #0066CC;
+       color: blue;
     min-height: 190px;
 }
 
@@ -2147,7 +2147,7 @@ html[data-theme="dark"] .extra-grid p,body[data-theme="dark"] .extra-grid p {
 html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section {
     background: #f5f7fb;
     color: #10213d;
-    color: #0066CC;
+    color: blue;
 }
 
 /* Events calendar, sermon video players and gallery */
@@ -2163,8 +2163,8 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
 .calendar-view {
     border: 1px solid #121212;
     background: var(--card,#fff);
-    color: var(--ink,#10213d);
-    color: #0066CC;
+      color: blue;
+
     padding: 10px 19px;
     border-radius: 5px;
     font-weight: 800;
@@ -2190,7 +2190,7 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     border-radius: 12px;
     padding: clamp(20px,4vw,36px);
     background: var(--card,#fff);
-    color: var(--ink,#10213d);
+    color: blue;
 }
 
 .calendar-panel[hidden] {
@@ -2205,14 +2205,14 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     font-size: 10px;
     letter-spacing: .16em;
     font-weight: 800;
-    color: var(--blue,#0759a8);
+      color: black;
 }
 
 .calendar-heading h3 {
     font-family: var(--heading);
     font-size: clamp(25px,3vw,36px);
     font-weight: 500;
-    color: var(--navy,#061a3a);
+    color: black;
     margin: 8px 0;
 }
 
@@ -2244,10 +2244,19 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     min-height: 75px;
 }
 
+/* Calendar date — Light mode */
 .calendar-date strong {
     font-family: var(--heading);
     font-size: 25px;
-    color: var(--navy,#061a3a);
+    color: blue;
+}
+
+/* Calendar date — Dark mode */
+html[data-theme="dark"] .calendar-date strong,
+body[data-theme="dark"] .calendar-date strong,
+html.dark-theme .calendar-date strong,
+body.dark-theme .calendar-date strong {
+    color: #a87500;
 }
 
 .calendar-date span {
@@ -2260,7 +2269,7 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     font-family: var(--heading);
     font-size: 23px;
     font-weight: 500;
-    color: var(--navy,#061a3a);
+        color: black;
     margin: 3px 0 6px;
 }
 
@@ -2298,7 +2307,7 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     border: 1px solid var(--line,#d9e1ec);
     border-radius: 12px;
     background: var(--card,#fff);
-    color: var(--ink,#10213d);
+    color: blue;
 }
 
 .sermon-feature {
@@ -2331,7 +2340,7 @@ html[data-theme="light"] .extra-section,body[data-theme="light"] .extra-section 
     font-family: var(--heading);
     font-size: clamp(24px,3vw,34px);
     font-weight: 500;
-    color: var(--navy,#061a3a);
+    color: blue;
     margin: 8px 0;
 }
 
@@ -2457,7 +2466,7 @@ html[data-theme="dark"] .calendar-view {
 
 html[data-theme="dark"] .calendar-view.is-active {
     background: #f7b916;
-    color: #061a3a;
+      color: blue;
 }
 
 @media (max-width:760px) {
@@ -3200,7 +3209,7 @@ font-style: normal;
 .home-intro-copy .lead {
     font-size: 17px;
     line-height: 1.8;
-    color: #273a56;
+      color: blue;
 }
 
 .home-intro-copy > p:not(.eyebrow) {
@@ -3303,7 +3312,7 @@ font-style: normal;
 }
 
 .pillar-feature .pillar-number {
-    color: #17375d;
+       color: blue;
 }
 
 .pillar-symbol {
@@ -3329,7 +3338,7 @@ font-style: normal;
 }
 
 .pillar-feature p {
-    color: #243957;
+    color: blue;
 }
 
 .pillar-link {
@@ -3918,7 +3927,7 @@ h4,
     padding: 0 !important;
     background: #fff;
     border: 1px solid #121212;
-    color: #10213b;
+    color: blue;
     box-shadow: 0 16px 38px rgba(0, 0, 0, 0.13);
 }
 
@@ -3935,7 +3944,7 @@ h4,
 
 .image-mandate-cards article span {
     display: block;
-    color: #0759a8;
+      color: blue;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -3944,7 +3953,7 @@ h4,
 
 .image-mandate-cards article h3 {
     font: 700 25px/1.2 Arial, Helvetica, sans-serif;
-    color: #061a3a;
+    color: blue;
     margin: 0 0 12px;
 }
 
@@ -4034,7 +4043,7 @@ h4,
     place-items: center;
     border-radius: 50%;
     background: #f7b916;
-    color: #061a3a;
+    color: blue;
     z-index: 2;
 }
 
@@ -4487,7 +4496,7 @@ html[data-theme="light"] .home-intro-copy h2 {
 
 html[data-theme="light"] .home-intro-copy h2 em,
 html[data-theme="light"] .home-intro-copy h2 em span {
-    color: #4169E1;
+    color: blue;
 }
 
 /* HOME INTRO HEADING — DARK MODE */
@@ -4507,7 +4516,7 @@ html[data-theme="light"] h2 {
 
 html[data-theme="light"] h2 em,
 html[data-theme="light"] h2 em span {
-    color: #4169E1;
+    color: blue;
 }
 
 /* CHURCH SECTION HEADING — DARK MODE */
@@ -5037,7 +5046,7 @@ html[data-theme="dark"] .calendar-date strong {
 }
 
 .extra-grid article p {
-    color: #0066CC;
+  background: transparent;
 }
 
 /* =========================================
@@ -5074,7 +5083,7 @@ html[data-theme="dark"] .calendar-date strong {
 
 .mandate-cards.image-mandate-cards
 .mandate-card-copy p {
-    color: #0066CC;
+  background: transparent;
 }
 
 /* =========================================
@@ -5189,7 +5198,7 @@ html[data-theme="dark"] .calendar-date strong {
 }
 
 .lightbox-close:hover {
-    background: #0066CC;
+    background: blue;
     transform: rotate(90deg);
 }
 
@@ -5236,7 +5245,7 @@ html[data-theme="dark"] .calendar-date strong {
 }
 
 .lightbox-arrow:hover {
-    background: #0066CC;
+    background: blue;
 }
 
 .lightbox-prev {
@@ -5398,7 +5407,7 @@ html[data-theme="dark"] .verse-reference span {
 
 .gallery-page-more .button-outline:hover {
     background-color: #ffd700 !important;
-    color: #061a3a !important;
+    color: blue !important;
 }
 
 /* Reduce space between the church family section and events */
@@ -5493,7 +5502,7 @@ html[data-theme="dark"] .verse-reference span {
 }
 
 .visit-points small {
-    color: #64748b;
+    color: blue;
     font-size: 12px;
     line-height: 1.7;
 }
@@ -5628,7 +5637,7 @@ html[data-theme="dark"] .visit-points strong {
     border-radius: 50%;
 
     background: #ffffff;
-    color: #10213b;
+    color:blue;
 
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -5823,7 +5832,7 @@ html[data-theme="dark"] .theme-toggle:hover {
     margin: 0;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 10px;
-    background: #142844;
+    color: blue !important;
     color: #ffffff;
     cursor: pointer;
     z-index: 1005;
@@ -5834,7 +5843,7 @@ html[data-theme="dark"] .theme-toggle:hover {
 /* Keep the button visible in both themes */
 html[data-theme="light"] .menu-toggle,
 html[data-theme="dark"] .menu-toggle {
-    background: #142844;
+      color: blue !important;
     color: #ffffff;
 }
 
@@ -5881,7 +5890,7 @@ html[data-theme="dark"] .menu-toggle {
 
 /* Subtle interaction feedback */
 .menu-toggle:hover {
-    background: #203b60;
+      color: blue !important;
 }
 
 .menu-toggle:focus-visible {
@@ -5918,7 +5927,7 @@ html[data-theme="dark"] .menu-toggle {
 
 /* Keep the button and image visible in dark mode */
 html[data-theme="dark"] .theme-toggle {
-    background-color: #15243a !important;
+    color: blue !important;
     border-color: #647995 !important;
 }
 
@@ -5973,14 +5982,14 @@ html[data-theme="dark"] .theme-toggle #theme-icon {
 
 /* MORE PHOTOS — Default background color */
 .gallery-page-more .button.button-outline {
-    background-color: #142844 !important;
+      color: blue !important;
     color: #ffffff !important;
     border-color: #142844 !important;
 }
 
 /* Hover state */
 .gallery-page-more .button.button-outline:hover {
-    background-color: #203b60 !important;
+    color: blue !important;
     color: #ffffff !important;
     border-color: #203b60 !important;
 }
@@ -6075,4 +6084,594 @@ html[data-theme="light"] .contact-line small,
 body[data-theme="light"] .contact-line small,
 html:not([data-theme="dark"]) .contact-line small {
     color: blue !important;
+}
+
+/* OUR CHURCH FAMILY — Increase image card height */
+.extra-section .extra-card-image {
+    display: block;
+    width: 100%;
+    height: 320px !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+/* Taller images on mobile */
+@media (max-width: 768px) {
+    .extra-section .extra-card-image {
+        height: 360px !important;
+    }
+}
+
+
+/* Plan a Visit button — Light mode */
+html[data-theme="light"] .nav .nav-button,
+html:not([data-theme="dark"]) .nav .nav-button {
+     background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000;
+}
+
+/* Arrow icon — Light mode */
+html[data-theme="light"] .nav .nav-button span,
+html:not([data-theme="dark"]) .nav .nav-button span {
+    color: #ffffff !important;
+}
+
+/* Plan a Visit button — Dark mode */
+html[data-theme="dark"] .nav .nav-button,
+body[data-theme="dark"] .nav .nav-button,
+html.dark-theme .nav .nav-button,
+body.dark-theme .nav .nav-button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff;
+}
+
+/* Arrow icon — Dark mode */
+html[data-theme="dark"] .nav .nav-button span,
+body[data-theme="dark"] .nav .nav-button span,
+html.dark-theme .nav .nav-button span,
+body.dark-theme .nav .nav-button span {
+    color: #000000 !important;
+}
+
+/* Smooth transition */
+.nav .nav-button {
+    transition: background-color 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.section-heading h2,
+.section-heading h2 em {
+    font-style: normal !important;
+}
+
+
+/* =========================================
+   CHURCH LOCATION & GOOGLE MAP
+========================================= */
+
+.church-location {
+    padding: 100px 0;
+    background-color: var(--surface, #ffffff);
+    color: var(--text, #111111);
+}
+
+.church-location .location-heading {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.church-location .location-heading .eyebrow {
+    margin-bottom: 18px;
+}
+
+.church-location .location-heading h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.08;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.church-location .location-heading h2 em {
+    font-style: normal;
+}
+
+.church-location .location-heading > p:last-child {
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.church-location .location-map {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    background-color: #eeeeee;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10);
+}
+
+.church-location .location-map iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+.church-location .location-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.church-location .location-footer p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.church-location .location-footer p strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.church-location .location-footer .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 14px 22px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.church-location .location-footer .button:hover {
+    background-color: transparent;
+    color: var(--text, #111111);
+    border-color: currentColor;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .church-location,
+body[data-theme="dark"] .church-location,
+html.dark-theme .church-location,
+body.dark-theme .church-location {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .church-location .location-map,
+body[data-theme="dark"] .church-location .location-map,
+html.dark-theme .church-location .location-map,
+body.dark-theme .church-location .location-map {
+    border-color: #333333;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .church-location .location-footer .button,
+body[data-theme="dark"] .church-location .location-footer .button,
+html.dark-theme .church-location .location-footer .button,
+body.dark-theme .church-location .location-footer .button {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+html[data-theme="dark"] .church-location .location-footer .button:hover,
+body[data-theme="dark"] .church-location .location-footer .button:hover,
+html.dark-theme .church-location .location-footer .button:hover,
+body.dark-theme .church-location .location-footer .button:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Responsive layout */
+@media (max-width: 640px) {
+    .church-location {
+        padding: 70px 0;
+    }
+
+    .church-location .location-map iframe {
+        height: 350px;
+    }
+
+    .church-location .location-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .church-location .location-footer .button {
+        align-self: flex-start;
+    }
+}
+.church-location .location-heading > p:last-child {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Calendar date — Light mode */
+.calendar-date strong {
+    font-family: var(--heading);
+    font-size: 25px;
+    color: blue;
+}
+
+/* Calendar date — Dark mode */
+html[data-theme="dark"] .calendar-date strong,
+body[data-theme="dark"] .calendar-date strong,
+html.dark-theme .calendar-date strong,
+body.dark-theme .calendar-date strong {
+    color:yellow;
+}
+
+
+
+/* =========================================
+   HOME HERO — MOBILE RESPONSIVENESS
+========================================= */
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.home-hero .hero-photo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tablets and mobile devices */
+@media (max-width: 768px) {
+
+    .home-hero {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .home-hero .hero-photo {
+        width: 100%;
+        max-width: 100%;
+        height: 65vh;
+        min-height: 350px;
+        max-height: 550px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .home-hero .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        box-sizing: border-box;
+    }
+
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+
+    .home-hero .hero-photo {
+        height: 55vh;
+        min-height: 300px;
+        max-height: 420px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+
+
+/* Home Visit — Image fills parent height */
+.home-visit {
+    position: relative;
+}
+
+.home-visit-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.home-visit-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .home-visit-image {
+        width: 100%;
+        height: 100%;
+        min-height: 350px;
+    }
+
+    .home-visit-image img {
+        width: 100%;
+        height: 100%;
+        min-height: 350px;
+        object-fit: cover;
+    }
+}
+
+
+/* =========================================
+   HOME COMMUNITY — MOBILE HEADING LAYOUT
+========================================= */
+
+@media (max-width: 768px) {
+
+    .home-community .section-heading {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .home-community .section-heading > div {
+        min-width: 0;
+    }
+
+    .home-community .section-heading h2 {
+        font-size: clamp(1.25rem, 4vw, 1.8rem);
+        line-height: 1.25;
+        margin: 0;
+    }
+
+    .home-community .section-heading h2 br {
+        display: none;
+    }
+
+    .home-community .section-heading > p {
+        min-width: 0;
+        margin: 0;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+}
+
+/* Extra-small phones */
+@media (max-width: 380px) {
+
+    .home-community .section-heading {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .home-community .section-heading h2 {
+        font-size: 1.15rem;
+    }
+
+    .home-community .section-heading > p {
+        font-size: 0.78rem;
+    }
+
+}
+
+
+
+/* =========================================
+   MANDATE CARDS — INCREASE IMAGE HEIGHT
+========================================= */
+
+/* Desktop */
+.mandate-cards.image-mandate-cards article {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.mandate-cards.image-mandate-cards article img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .mandate-cards.image-mandate-cards article img {
+        height: 380px;
+        min-height: 380px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+
+    .mandate-cards.image-mandate-cards article img {
+        height: 340px;
+        min-height: 340px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+
+
+/* =========================================
+   CHURCH CALENDAR — VIEW TABS
+========================================= */
+
+.calendar-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.calendar-view {
+    background: #F1F4F8;
+    color: #34445B;
+
+    border: 1px solid #DCE3EC;
+    border-radius: 8px;
+
+    padding: 11px 22px;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+/* Hover */
+.calendar-view:hover:not(.is-active) {
+    background: #E4EAF2;
+    color: #061A3A;
+    border-color: #C4CEDB;
+}
+
+/* Active tab */
+.calendar-view.is-active {
+    background: #061A3A;
+    color: #FFFFFF;
+
+    border-color: #061A3A;
+
+    box-shadow: 0 3px 10px rgba(6, 26, 58, 0.15);
+}
+
+/* Active tab hover */
+.calendar-view.is-active:hover {
+    background: #0D2B53;
+    color: #FFFFFF;
+    border-color: #0D2B53;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+:root[data-theme="dark"] .calendar-view {
+    background: #142D4D;
+    color: #D5DFEC;
+    border-color: #294361;
+}
+
+:root[data-theme="dark"] .calendar-view:hover:not(.is-active) {
+    background: #1C3A60;
+    color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .calendar-view.is-active {
+    background: #D9A83F;
+    color: #061A3A;
+    border-color: #D9A83F;
+
+    box-shadow: 0 3px 12px rgba(217, 168, 63, 0.18);
+}
+
+:root[data-theme="dark"] .calendar-view.is-active:hover {
+    background: #E7BB5C;
+    color: #061A3A;
+    border-color: #E7BB5C;
+}
+
+/* Keyboard accessibility */
+.calendar-view:focus-visible {
+    outline: 3px solid #D9A83F;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   CALENDAR EVENT BOXES — TEXT COLORS
+========================================= */
+
+/* Light mode */
+:root[data-theme="light"] .calendar-panel .calendar-event,
+:root[data-theme="light"] .calendar-panel .event-card {
+    color: #000000;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .calendar-panel .calendar-event,
+:root[data-theme="dark"] .calendar-panel .event-card {
+    color: #FFFFFF;
+}
+
+/* Light mode */
+:root[data-theme="light"] .extra-section .extra-section-text {
+    color: grey;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .extra-section .extra-section-text {
+    color: #fff;
+}
+
+/* ABOUT OUR CHURCH — HEADING THEME COLORS */
+
+/* LIGHT MODE 
+html[data-theme="light"] .about-copy h2,
+html[data-theme="light"] .about-copy h2 em,
+html[data-theme="light"] .about-copy h2 em span {
+    color: #0066CC !important;
+}*/
+
+/* DARK MODE 
+html[data-theme="dark"] .about-copy h2,
+html[data-theme="dark"] .about-copy h2 em,
+html[data-theme="dark"] .about-copy h2 em span {
+    color: #FFFFFF !important;
+}
+*/
+/* HOME INTRO COPY — LIGHT MODE */
+html[data-theme="light"] .home-intro-copy p {
+    color: #000000 !important;
+}
+
+/* HOME INTRO COPY — DARK MODE */
+html[data-theme="dark"] .home-intro-copy p {
+    color: #FFFFFF !important;
+}
+
+/* HOME INTRO COPY — HEADING ACCENT */
+html[data-theme="light"] .home-intro-copy h2 em {
+    color: #0066CC !important;
+}
+
+html[data-theme="dark"] .home-intro-copy h2 em {
+    color: #FFFFFF !important;
+}
+
+/* MANDATE CARD — EQUIP LABEL */
+html[data-theme="dark"] .mandate-card-copy span {
+    color: #FFD700 !important;
 }
